@@ -3,19 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Render Hosted Portfolio</title>
+    <title>My Portfolio</title>
     <style>
-        body { font-family: sans-serif; background: #f0f4f8; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .box { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
-        h1 { color: #4a5568; }
-        .tag { background: #4f46e5; color: white; padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .portfolio-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+        }
+        h1 { color: #333; margin-bottom: 5px; }
+        p { color: #666; font-size: 1.1rem; }
+        .tag {
+            background: #4A90E2;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1>Hello from Render! 🌐</h1>
-        <p>This application is safely deployed using GitHub Actions.</p>
-        <span class="tag">Status: Live</span>
+
+    <div class="portfolio-card">
+        <h1>Rachana N Shekhar</h1>
+        <span class="tag">Web Developer</span>
+        <p>Welcome to my official portfolio website! This site is fully automated and deployed continuously using GitHub Actions and Render.</p>
     </div>
+
 </body>
 </html>
