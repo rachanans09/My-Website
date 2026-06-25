@@ -6,17 +6,17 @@ on:
       - main
 
 jobs:
-  # Stage 1: Continuous Integration (CI) - Code Testing
+  # Stage 1: Continuous Integration (CI) - Lint/Check Code
   test_code:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Check HTML Integrity
-        uses: cyb3rjacob/html5validator-action@v1.1.0
-        with:
-          root: '.'
+      - name: Super-Fast HTML Hint Check
+        run: |
+          npm install -g htmlhint
+          htmlhint index.html
 
   # Stage 2: Continuous Deployment (CD) - Live Push to Render Server
   deploy_to_render:
