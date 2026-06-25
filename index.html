@@ -3,43 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Rachana N Shekhar | Portfolio</title>
     <style>
+        * { box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            margin: 0;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
         }
-        .portfolio-card {
+        .container {
+            max-width: 700px;
+            width: 100%;
+        }
+        /* Card Sections */
+        .section-card {
             background: white;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 400px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            margin-bottom: 25px;
         }
-        h1 { color: #333; margin-bottom: 5px; }
-        p { color: #666; font-size: 1.1rem; }
-        .tag {
-            background: #4A90E2;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+        h1 { margin: 0 0 10px 0; color: #1e293b; }
+        h2 { margin: 0 0 15px 0; color: #3b82f6; font-size: 1.3rem; }
+        p { line-height: 1.6; color: #64748b; }
+        
+        /* Grid for Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .project-item {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        .project-item h3 { margin: 0 0 5px 0; font-size: 1.1rem; }
+        
+        /* Contact Button Links */
+        .btn {
             display: inline-block;
+            background: #1e293b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-right: 10px;
+            font-size: 0.9rem;
+            transition: background 0.2s;
         }
+        .btn:hover { background: #3b82f6; }
     </style>
 </head>
 <body>
 
-    <div class="portfolio-card">
-        <h1>Rachana N Shekhar</h1>
-        <span class="tag">Web Developer</span>
-        <p>Welcome to my official portfolio website! This site is fully automated and deployed continuously using GitHub Actions and Render.</p>
+    <div class="container">
+        
+        <!-- HEADER SECTION -->
+        <div class="section-card">
+            <h1>Rachana N Shekhar</h1>
+            <p><strong>Web Developer & Tech Enthusiast</strong></p>
+            <p>Welcome to my space! I build lightweight, responsive web applications and implement automated deployment systems to take projects from local code to cloud production seamlessly.</p>
+        </div>
+
+        <!-- PROJECTS SECTION -->
+        <div class="section-card">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <h3>My-Website</h3>
+                    <p>My interactive web portfolio hosted on Render using automated GitHub Actions.</p>
+                </div>
+                <div class="project-item">
+                    <h3>WELCOME</h3>
+                    <p>A placeholder for your next brilliant web development tool or layout application.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT SECTION -->
+        <div class="section-card">
+            <h2>Let's Connect</h2>
+            <p>Feel free to reach out to look over my repositories or discuss upcoming development builds.</p>
+            <a href="https://github.com/rachanans09" target="_blank" class="btn">GitHub Profile</a>
+            <a href="mailto:rachanans2007@gmail.com class="btn">Send an Email</a>
+        </div>
+
     </div>
 
 </body>
