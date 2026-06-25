@@ -1,41 +1,27 @@
-name: Deploy Website to GitHub Pages
+name: Deploy Website to Render Server
 
 on:
   push:
     branches:
       - main
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
-  # Job 1: Test and Check the Code (CI)
-  test:
+  # Stage 1: Continuous Integration (CI) - Code Testing
+  test_code:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: HTML Validation Check
+      - name: Check HTML Integrity
         uses: cyb3rjacob/html5validator-action@v1.1.0
         with:
           root: '.'
 
-  # Job 2: Deploy to Server (CD) - Only runs if Job 1 passes!
-  deploy:
-    needs: test
+  # Stage 2: Continuous Deployment (CD) - Live Push to Render Server
+  deploy_to_render:
+    needs: test_code
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.' 
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Trigger Render Server Update
+        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
